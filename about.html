@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | LifeSaver</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-heartbeat text-3xl text-red-600 mr-2"></i>
+                        <span class="text-xl font-bold text-gray-900">LifeSaver</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html" class="text-gray-500 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="finddonar.html" class="text-gray-500 px-3 py-2 text-sm font-medium">Find Donors</a>
+                        <a href="donate.html" class="text-gray-500 px-3 py-2 text-sm font-medium">Donate</a>
+                        <a href="about.html" class="bg-red-600 text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">
+                            <i class="fas fa-user-plus mr-2"></i>Register
+                        </button>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-900 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Home</a>
+                <a href="finddonar.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Find Donors</a>
+                <a href="donate.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Donate</a>
+                <a href="about.html" class="block px-3 py-2 text-base font-medium text-white bg-red-600 rounded-md">About</a>
+                <button class="w-full bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium mt-2">
+                    <i class="fas fa-user-plus mr-2"></i>Register
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-gradient-to-r from-red-600 to-red-800 min-h-[300px] flex items-center justify-center text-white pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Our Mission to Save Lives</h1>
+                <p class="text-xl mb-8 opacity-90">Connecting donors with those in need to create a community of lifesavers.</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#our-story" class="bg-white hover:bg-gray-100 text-red-600 px-8 py-3 rounded-lg text-lg font-semibold transition duration-300">
+                        <i class="fas fa-book-open mr-2"></i>Our Story
+                    </a>
+                    <a href="#contact" class="bg-transparent hover:bg-red-700 border-2 border-white text-white px-8 py-3 rounded-lg text-lg font-semibold transition duration-300">
+                        <i class="fas fa-envelope mr-2"></i>Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-6 border rounded-xl">
+                    <div class="text-red-600 text-4xl font-bold mb-2">10K+</div>
+                    <div class="text-gray-600">Lives Impacted</div>
+                </div>
+                <div class="p-6 border rounded-xl">
+                    <div class="text-red-600 text-4xl font-bold mb-2">5K+</div>
+                    <div class="text-gray-600">Registered Donors</div>
+                </div>
+                <div class="p-6 border rounded-xl">
+                    <div class="text-red-600 text-4xl font-bold mb-2">50+</div>
+                    <div class="text-gray-600">Partner Hospitals</div>
+                </div>
+                <div class="p-6 border rounded-xl">
+                    <div class="text-red-600 text-4xl font-bold mb-2">24/7</div>
+                    <div class="text-gray-600">Emergency Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission -->
+    <section id="our-mission" class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Core Values</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">These principles guide everything we do at LifeSaver</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Mission 1 -->
+                <div class="mission-card bg-white p-8 rounded-xl shadow-md text-center hover:shadow-lg transition duration-300">
+                    <div class="mission-icon text-red-600 text-5xl mb-6 transition duration-300">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Save Lives</h3>
+                    <p class="text-gray-600">Every drop of blood donated has the potential to save up to three lives. We're committed to making this lifesaving resource accessible to all.</p>
+                </div>
+                
+                <!-- Mission 2 -->
+                <div class="mission-card bg-white p-8 rounded-xl shadow-md text-center hover:shadow-lg transition duration-300">
+                    <div class="mission-icon text-red-600 text-5xl mb-6 transition duration-300">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Build Community</h3>
+                    <p class="text-gray-600">We believe in the power of community. By connecting donors with recipients, we're creating a network of people helping people.</p>
+                </div>
+                
+                <!-- Mission 3 -->
+                <div class="mission-card bg-white p-8 rounded-xl shadow-md text-center hover:shadow-lg transition duration-300">
+                    <div class="mission-icon text-red-600 text-5xl mb-6 transition duration-300">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Ensure Safety</h3>
+                    <p class="text-gray-600">Safety is our top priority. We maintain the highest standards for both donors and recipients throughout the donation process.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section id="our-story" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Journey</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">From a simple idea to a life-saving movement</p>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline -->
+                <div class="space-y-8">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-red-600 text-white">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">2015 - The Beginning</h3>
+                            <p class="text-gray-600">Founded by a group of medical students who witnessed the critical need for blood during emergencies. What started as a small campus initiative quickly grew into a city-wide movement.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-red-600 text-white">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">2017 - Digital Platform</h3>
+                            <p class="text-gray-600">Launched our first digital platform connecting donors with recipients in real-time, reducing emergency response times by 60% in our pilot cities.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-red-600 text-white">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">2019 - Hospital Partnerships</h3>
+                            <p class="text-gray-600">Formed strategic partnerships with 25 major hospitals, creating a seamless blood supply chain that serves over 10,000 patients annually.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-red-600 text-white">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">2022 - National Recognition</h3>
+                            <p class="text-gray-600">Received the National Healthcare Innovation Award for our work in revolutionizing blood donation accessibility and emergency response systems.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 5 -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-red-600 text-white">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">2023 - Expanding Reach</h3>
+                            <p class="text-gray-600">Currently expanding our services to 5 new states, with a goal to establish a nationwide network of donors and partner hospitals by 2025.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">The passionate individuals behind LifeSaver</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="team-member bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <div class="overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Dr. Sarah Johnson" class="w-full h-full object-cover transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Dr. Sarah Johnson</h3>
+                        <p class="text-red-600 font-medium mb-3">Founder & Medical Director</p>
+                        <p class="text-gray-600">Board-certified hematologist with 15 years of experience in transfusion medicine.</p>
+                        <div class="flex space-x-3 mt-4">
+                            <a href="#" class="text-gray-500 hover:text-red-600"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-red-600"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-red-600"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-member bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <div class="overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Michael Chen" class="w-full h-full object-cover transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Michael Chen</h3>
+                        <p class="text-red-600 font-medium mb-3">Technology Director</p>
+                        <p class="text-gray-600">Software engineer specializing in healthcare systems and emergency response platforms.</p>
+                        <div class="flex space-x-3 mt-4">
+                            <a href="#" class="text-gray-500 hover:text-red-600"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-red-600"><i class="fab fa-github"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-red-600"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-member bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <div class="overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Priya Patel" class="w-full h-full object-cover transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Priya Patel</h3>
+                        <p class="text-red-600 font-medium mb-3">Community Outreach</p>
+                        <p class="text-gray-600">Public health specialist with a passion for building donor communities and education programs.</p>
+                        <div class="flex space-x-3 mt-4">
+                            <a href="#" class="text-gray-500 hover:text-red-600"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-red-600"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-red-600"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="team-member bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <div class="overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="David Rodriguez" class="w-full h-full object-cover transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">David Rodriguez</h3>
+                        <p class="text-red-600 font-medium mb-3">Operations Manager</p>
+                        <p class="text-gray-600">Logistics expert ensuring our blood supply chain runs smoothly 24/7.</p>
+                        <div class="flex space-x-3 mt-4">
+                            <a href="#" class="text-gray-500 hover:text-red-600"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-red-600"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-red-600"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-flex items-center text-red-600 font-medium hover:text-red-700">
+                    View all team members
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Trusted Partners</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Working together with leading healthcare organizations</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+                <div class="p-4 flex justify-center">
+                    <img src="https://via.placeholder.com/150x80?text=City+Hospital" alt="City Hospital" class="h-16 object-contain grayscale hover:grayscale-0 transition duration-300">
+                </div>
+                <div class="p-4 flex justify-center">
+                    <img src="https://via.placeholder.com/150x80?text=National+Blood+Bank" alt="National Blood Bank" class="h-16 object-contain grayscale hover:grayscale-0 transition duration-300">
+                </div>
+                <div class="p-4 flex justify-center">
+                    <img src="https://via.placeholder.com/150x80?text=Red+Cross" alt="Red Cross" class="h-16 object-contain grayscale hover:grayscale-0 transition duration-300">
+                </div>
+                <div class="p-4 flex justify-center">
+                    <img src="https://via.placeholder.com/150x80?text=Health+First" alt="Health First" class="h-16 object-contain grayscale hover:grayscale-0 transition duration-300">
+                </div>
+                <div class="p-4 flex justify-center">
+                    <img src="https://via.placeholder.com/150x80?text=MediCare" alt="MediCare" class="h-16 object-contain grayscale hover:grayscale-0 transition duration-300">
+                </div>
+                <div class="p-4 flex justify-center">
+                    <img src="https://via.placeholder.com/150x80?text=LifeLine" alt="LifeLine" class="h-16 object-contain grayscale hover:grayscale-0 transition duration-300">
+                </div>
+                <div class="p-4 flex justify-center">
+                    <img src="https://via.placeholder.com/150x80?text=Unity+Health" alt="Unity Health" class="h-16 object-contain grayscale hover:grayscale-0 transition duration-300">
+                </div>
+                <div class="p-4 flex justify-center">
+                    <img src="https://via.placeholder.com/150x80?text=Hope+Medical" alt="Hope Medical" class="h-16 object-contain grayscale hover:grayscale-0 transition duration-300">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-12 bg-gradient-to-r from-red-600 to-red-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Stories That Inspire Us</h2>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto">Hear from donors, recipients, and healthcare professionals about their experiences</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white bg-opacity-10 p-6 rounded-xl backdrop-filter backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="blood-drop bg-white bg-opacity-20 rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <i class="fas fa-tint text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">James Wilson</h4>
+                            <p class="text-red-200 text-sm">Regular Donor (25 donations)</p>
+                        </div>
+                    </div>
+                    <p class="italic">"I've been donating with LifeSaver for 5 years. Their system makes it so easy to schedule donations and see the impact I'm making. Knowing my blood has helped save lives is incredibly rewarding."</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white bg-opacity-10 p-6 rounded-xl backdrop-filter backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="blood-drop bg-white bg-opacity-20 rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <i class="fas fa-user-md text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Dr. Angela Martinez</h4>
+                            <p class="text-red-200 text-sm">Emergency Physician</p>
+                        </div>
+                    </div>
+                    <p class="italic">"In emergency medicine, every second counts. LifeSaver's rapid response network has helped us save countless trauma patients by connecting us with compatible donors within minutes."</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white bg-opacity-10 p-6 rounded-xl backdrop-filter backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="blood-drop bg-white bg-opacity-20 rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <i class="fas fa-heart text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sophia Chen</h4>
+                            <p class="text-red-200 text-sm">Blood Recipient</p>
+                        </div>
+                    </div>
+                    <p class="italic">"When I needed an emergency transfusion after childbirth, LifeSaver found a donor with my rare blood type in under an hour. I'm forever grateful to the donor and this amazing organization."</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-flex items-center text-white font-medium hover:text-red-200">
+                    Read more stories
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gray-50 rounded-xl shadow-xl overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="p-8 md:p-12 bg-red-600 text-white">
+                        <h2 class="text-3xl font-bold mb-6">Get In Touch</h2>
+                        <p class="text-red-100 mb-8">Have questions or want to partner with us? Reach out to our team—we'd love to hear from you.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-white bg-opacity-20 rounded-full w-10 h-10 flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Our Headquarters</h4>
+                                    <p class="text-red-100">123 LifeSaver Way, Health City, HC 12345</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-white bg-opacity-20 rounded-full w-10 h-10 flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Contact Numbers</h4>
+                                    <p class="text-red-100">General Inquiries: (123) 456-7890</p>
+                                    <p class="text-red-100">Emergency Line: (123) 456-7891</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-white bg-opacity-20 rounded-full w-10 h-10 flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Email Us</h4>
+                                    <p class="text-red-100">info@lifesaver.org</p>
+                                    <p class="text-red-100">partners@lifesaver.org</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full w-10 h-10 flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full w-10 h-10 flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full w-10 h-10 flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full w-10 h-10 flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 md:p-12">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
+                        <form>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-gray-700 mb-2">Your Name</label>
+                                    <input type="text" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600" required>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 mb-2">Email Address</label>
+                                    <input type="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600" required>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 mb-2">Subject</label>
+                                    <select class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600" required>
+                                        <option value="">Select a subject</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="partnership">Partnership Opportunity</option>
+                                        <option value="media">Media Inquiry</option>
+                                        <option value="donation">Donation Question</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 mb-2">Message</label>
+                                    <textarea rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600" required></textarea>
+                                </div>
+                            </div>
+                            <div class="mt-6">
+                                <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg text-lg font-semibold transition duration-300">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-gradient-to-r from-red-600 to-red-800 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6">Join Our LifeSaving Community</h2>
+            <p class="text-xl mb-8 opacity-90">Whether you want to donate, volunteer, or partner with us, your support makes a difference.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="donate.html" class="bg-white hover:bg-gray-100 text-red-600 px-8 py-3 rounded-lg text-lg font-semibold transition duration-300">
+                    <i class="fas fa-tint mr-2"></i>Donate Blood
+                </a>
+                <a href="#" class="bg-transparent hover:bg-red-700 border-2 border-white text-white px-8 py-3 rounded-lg text-lg font-semibold transition duration-300">
+                    <i class="fas fa-hands-helping mr-2"></i>Volunteer
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-heartbeat text-3xl text-red-600 mr-2"></i>
+                        <span class="text-xl font-bold">LifeSaver</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Connecting donors with those in need to save lives through blood donation.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="finddonar.html" class="text-gray-400 hover:text-white">Find Donors</a></li>
+                        <li><a href="donate.html" class="text-gray-400 hover:text-white">Donate Blood</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blood Donation Guide</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Eligibility Criteria</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blood Type Chart</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Donor Stories</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Volunteer Opportunities</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Emergency Contacts</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">24/7 Helpline: <span class="text-white">(123) 456-7890</span></li>
+                        <li class="text-gray-400">Email: <span class="text-white">emergency@lifesaver.org</span></li>
+                        <li class="text-gray-400">Urgent Blood Requests: <span class="text-white">(123) 456-7891</span></li>
+                    </ul>
+                    <div class="mt-6">
+                        <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium">
+                            <i class="fas fa-phone-alt mr-2"></i>Emergency Call
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2023 LifeSaver Blood Donation Platform. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Cookies Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-red-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="about.js"></script>
+</body>
+</html>

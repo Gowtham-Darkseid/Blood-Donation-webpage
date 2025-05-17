@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Blood Donors Near You | LifeSaver</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="donar.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-heartbeat text-3xl text-red-600 mr-2"></i>
+                        <span class="text-xl font-bold text-gray-900">LifeSaver</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html" class="text-gray-500 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="finddonar.html" class="bg-red-600 text-white px-3 py-2 rounded-md text-sm font-medium">Find Donors</a>
+                        <a href="donate.html" class="text-gray-500 px-3 py-2 text-sm font-medium">Donate</a>
+                        <a href="about.html" class="text-gray-500 px-3 py-2 text-sm font-medium">About</a>
+                        <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">
+                            <i class="fas fa-user-plus mr-2"></i>Register
+                        </button>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-900 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Home</a>
+                <a href="finddonar.html" class="block px-3 py-2 text-base font-medium text-white bg-red-600 rounded-md">Find Donors</a>
+                <a href="donate.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Donate</a>
+                <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">About</a>
+                <button class="w-full bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium mt-2">
+                    <i class="fas fa-user-plus mr-2"></i>Register
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-red-600 to-red-800 min-h-[300px] flex items-center justify-center text-white pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Find Blood Donors Near You</h1>
+                <p class="text-xl mb-8 opacity-90">Connect with verified blood donors in your area and schedule appointments quickly</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Filters -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-xl shadow-xl p-6">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div class="md:col-span-2">
+                        <label class="block text-gray-700 mb-2">Location</label>
+                        <div class="relative">
+                            <input type="text" id="location-input" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600" placeholder="Enter city, state or ZIP code">
+                            <button class="absolute right-3 top-3 text-gray-400 hover:text-gray-600">
+                                <i class="fas fa-location-arrow"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Blood Type</label>
+                        <select id="blood-type-select" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                            <option value="">All Types</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Distance</label>
+                        <select id="distance-select" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                            <option value="5">5 miles</option>
+                            <option value="10" selected>10 miles</option>
+                            <option value="25">25 miles</option>
+                            <option value="50">50 miles</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <label class="block text-gray-700 mb-2">Filters</label>
+                    <div class="flex flex-wrap gap-2">
+                        <button class="filter-btn px-4 py-2 border rounded-full text-sm font-medium hover:bg-red-50" data-filter="available-now">
+                            <i class="fas fa-bolt mr-1"></i> Available Now
+                        </button>
+                        <button class="filter-btn px-4 py-2 border rounded-full text-sm font-medium hover:bg-red-50" data-filter="verified">
+                            <i class="fas fa-check-circle mr-1"></i> Verified Donors
+                        </button>
+                        <button class="filter-btn px-4 py-2 border rounded-full text-sm font-medium hover:bg-red-50" data-filter="recent">
+                            <i class="fas fa-clock mr-1"></i> Recently Donated
+                        </button>
+                        <button class="filter-btn px-4 py-2 border rounded-full text-sm font-medium hover:bg-red-50" data-filter="universal">
+                            <i class="fas fa-star mr-1"></i> Universal Donors
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <button id="search-btn" class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition duration-300 pulse">
+                        <i class="fas fa-search mr-2"></i> Find Donors
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map and Results -->
+    <section class="py-8 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Map Container -->
+                <div class="lg:col-span-2">
+                    <div id="map-container">
+                        <!-- This would be replaced with actual MapStreet API implementation -->
+                        <div class="w-full h-full bg-gray-200 rounded-lg flex items-center justify-center">
+                            <div class="text-center p-8">
+                                <i class="fas fa-map-marked-alt text-5xl text-red-600 mb-4"></i>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Interactive Map</h3>
+                                <p class="text-gray-600 mb-4">MapStreet API would display donors here with real locations</p>
+                                <button class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg">
+                                    Enable Location Services
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">How it works</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="p-4 border rounded-lg">
+                                <div class="text-red-600 text-2xl mb-2">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Find Donors</h4>
+                                <p class="text-gray-600 text-sm">Search for donors by location and blood type</p>
+                            </div>
+                            <div class="p-4 border rounded-lg">
+                                <div class="text-red-600 text-2xl mb-2">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Book Appointment</h4>
+                                <p class="text-gray-600 text-sm">Schedule directly with available donors</p>
+                            </div>
+                            <div class="p-4 border rounded-lg">
+                                <div class="text-red-600 text-2xl mb-2">
+                                    <i class="fas fa-hand-holding-heart"></i>
+                                </div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Save Lives</h4>
+                                <p class="text-gray-600 text-sm">Connect and potentially save up to 3 lives</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Donors List -->
+                <div>
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden">
+                        <div class="bg-red-600 text-white p-4">
+                            <h3 class="text-lg font-semibold flex items-center">
+                                <i class="fas fa-users mr-2"></i> Available Donors
+                                <span id="donor-count" class="ml-auto bg-white text-red-600 px-2 py-1 rounded-full text-sm">24</span>
+                            </h3>
+                        </div>
+                        
+                        <div class="p-4 overflow-y-auto max-h-[600px]">
+                            <!-- Donor cards will be dynamically inserted here -->
+                            <div id="donors-list">
+                                <!-- Sample donor cards (would be generated from API data) -->
+                                <div class="donor-card bg-white border rounded-lg p-4 mb-4">
+                                    <div class="flex items-start">
+                                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J." class="w-12 h-12 rounded-full object-cover mr-4">
+                                        <div class="flex-grow">
+                                            <div class="flex justify-between items-start">
+                                                <div>
+                                                    <h4 class="font-bold text-gray-900">Sarah J.</h4>
+                                                    <p class="text-gray-600 text-sm">Verified Donor</p>
+                                                </div>
+                                                <div class="blood-type">
+                                                    <span class="text-red-600 font-bold">A+</span>
+                                                </div>
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500">
+                                                <i class="fas fa-map-marker-alt mr-1"></i>
+                                                <span>1.2 miles away</span>
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500">
+                                                <i class="fas fa-clock mr-1"></i>
+                                                <span>Last donated: 2 months ago</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 flex justify-between items-center">
+                                        <div class="flex space-x-1 text-yellow-400">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                        <button class="book-btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300" data-id="1">
+                                            <i class="fas fa-calendar-alt mr-1"></i> Book
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="donor-card bg-white border rounded-lg p-4 mb-4">
+                                    <div class="flex items-start">
+                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="w-12 h-12 rounded-full object-cover mr-4">
+                                        <div class="flex-grow">
+                                            <div class="flex justify-between items-start">
+                                                <div>
+                                                    <h4 class="font-bold text-gray-900">Michael T.</h4>
+                                                    <p class="text-gray-600 text-sm">Emergency Donor</p>
+                                                </div>
+                                                <div class="blood-type">
+                                                    <span class="text-red-600 font-bold">O-</span>
+                                                </div>
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500">
+                                                <i class="fas fa-map-marker-alt mr-1"></i>
+                                                <span>0.8 miles away</span>
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500">
+                                                <i class="fas fa-bolt mr-1 text-green-500"></i>
+                                                <span class="text-green-600">Available now</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 flex justify-between items-center">
+                                        <div class="flex space-x-1 text-yellow-400">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <button class="book-btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300" data-id="2">
+                                            <i class="fas fa-calendar-alt mr-1"></i> Book
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="donor-card bg-white border rounded-lg p-4 mb-4">
+                                    <div class="flex items-start">
+                                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Priya K." class="w-12 h-12 rounded-full object-cover mr-4">
+                                        <div class="flex-grow">
+                                            <div class="flex justify-between items-start">
+                                                <div>
+                                                    <h4 class="font-bold text-gray-900">Priya K.</h4>
+                                                    <p class="text-gray-600 text-sm">Regular Donor</p>
+                                                </div>
+                                                <div class="blood-type">
+                                                    <span class="text-red-600 font-bold">B+</span>
+                                                </div>
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500">
+                                                <i class="fas fa-map-marker-alt mr-1"></i>
+                                                <span>2.5 miles away</span>
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500">
+                                                <i class="fas fa-clock mr-1"></i>
+                                                <span>Last donated: 3 weeks ago</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 flex justify-between items-center">
+                                        <div class="flex space-x-1 text-yellow-400">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <button class="book-btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300" data-id="3">
+                                            <i class="fas fa-calendar-alt mr-1"></i> Book
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="donor-card bg-white border rounded-lg p-4 mb-4">
+                                    <div class="flex items-start">
+                                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="David L." class="w-12 h-12 rounded-full object-cover mr-4">
+                                        <div class="flex-grow">
+                                            <div class="flex justify-between items-start">
+                                                <div>
+                                                    <h4 class="font-bold text-gray-900">David L.</h4>
+                                                    <p class="text-gray-600 text-sm">New Donor</p>
+                                                </div>
+                                                <div class="blood-type">
+                                                    <span class="text-red-600 font-bold">AB+</span>
+                                                </div>
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500">
+                                                <i class="fas fa-map-marker-alt mr-1"></i>
+                                                <span>4.1 miles away</span>
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500">
+                                                <i class="fas fa-check-circle mr-1 text-blue-500"></i>
+                                                <span class="text-blue-600">Verified yesterday</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 flex justify-between items-center">
+                                        <div class="flex space-x-1 text-yellow-400">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                        <button class="book-btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300" data-id="4">
+                                            <i class="fas fa-calendar-alt mr-1"></i> Book
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Need urgent help?</h3>
+                        <p class="text-gray-600 mb-4">If you need blood urgently, our emergency team is available 24/7 to assist you.</p>
+                        <button class="w-full bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg text-lg font-semibold transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Call Emergency Line
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="booking-modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-gray-900">Book Donation Appointment</h3>
+                    <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                
+                <div id="donor-info" class="flex items-center mb-6 p-4 bg-gray-50 rounded-lg">
+                    <img id="donor-img" src="https://randomuser.me/api/portraits/women/43.jpg" alt="Donor" class="w-16 h-16 rounded-full object-cover mr-4">
+                    <div>
+                        <h4 id="donor-name" class="font-bold text-gray-900">Sarah J.</h4>
+                        <div class="flex items-center mt-1">
+                            <span id="donor-blood" class="bg-red-100 text-red-600 px-2 py-1 rounded-full text-sm font-bold mr-2">A+</span>
+                            <span id="donor-distance" class="text-gray-600 text-sm"><i class="fas fa-map-marker-alt mr-1"></i>1.2 miles away</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <form id="booking-form">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2">Your Name</label>
+                        <input type="text" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2">Your Contact Number</label>
+                        <input type="tel" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2">Appointment Date</label>
+                        <input type="date" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2">Preferred Time</label>
+                        <select class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600" required>
+                            <option value="">Select time</option>
+                            <option value="morning">Morning (8AM - 12PM)</option>
+                            <option value="afternoon">Afternoon (12PM - 4PM)</option>
+                            <option value="evening">Evening (4PM - 8PM)</option>
+                        </select>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 mb-2">Additional Notes</label>
+                        <textarea rows="3" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"></textarea>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <div class="text-sm text-gray-600">
+                            <i class="fas fa-info-circle mr-1"></i> Donor will confirm via SMS
+                        </div>
+                        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg text-lg font-semibold transition duration-300">
+                            <i class="fas fa-paper-plane mr-2"></i> Send Request
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-heartbeat text-3xl text-red-600 mr-2"></i>
+                        <span class="text-xl font-bold">LifeSaver</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Connecting donors with those in need to save lives through blood donation.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="find-donor.html" class="text-gray-400 hover:text-white">Find Donors</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Donate Blood</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blood Donation Guide</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Eligibility Criteria</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blood Type Chart</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Donor Stories</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Volunteer Opportunities</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Emergency Contacts</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">24/7 Helpline: <span class="text-white">(123) 456-7890</span></li>
+                        <li class="text-gray-400">Email: <span class="text-white">emergency@lifesaver.org</span></li>
+                        <li class="text-gray-400">Urgent Blood Requests: <span class="text-white">(123) 456-7891</span></li>
+                    </ul>
+                    <div class="mt-6">
+                        <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium">
+                            <i class="fas fa-phone-alt mr-2"></i>Emergency Call
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2023 LifeSaver Blood Donation Platform. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Cookies Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-red-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Filter buttons
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.toggle('active');
+                // Here you would filter the donor list based on the selected filters
+                // For demo purposes, we're just toggling the active class
+            });
+        });
+
+        // Booking modal functionality
+        const bookButtons = document.querySelectorAll('.book-btn');
+        const bookingModal = document.getElementById('booking-modal');
+        const closeModal = document.getElementById('close-modal');
+        const bookingForm = document.getElementById('booking-form');
+        
+        bookButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Get donor data from the clicked card
+                const card = button.closest('.donor-card');
+                const donorName = card.querySelector('h4').textContent;
+                const donorImg = card.querySelector('img').src;
+                const donorBlood = card.querySelector('.blood-type span').textContent;
+                const donorDistance = card.querySelector('span:has(i.fa-map-marker-alt)').textContent;
+                
+                // Populate modal with donor data
+                document.getElementById('donor-name').textContent = donorName;
+                document.getElementById('donor-img').src = donorImg;
+                document.getElementById('donor-blood').textContent = donorBlood;
+                document.getElementById('donor-distance').innerHTML = `<i class="fas fa-map-marker-alt mr-1"></i>${donorDistance}`;
+                
+                // Show modal
+                bookingModal.classList.add('active');
+            });
+        });
+        
+        closeModal.addEventListener('click', () => {
+            bookingModal.classList.remove('active');
+        });
+        
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Your booking request has been sent to the donor. They will contact you shortly to confirm.');
+            bookingModal.classList.remove('active');
+            bookingForm.reset();
+        });
+
+        // Search functionality
+        document.getElementById('search-btn').addEventListener('click', () => {
+            const location = document.getElementById('location-input').value;
+            const bloodType = document.getElementById('blood-type-select').value;
+            const distance = document.getElementById('distance-select').value;
+            
+            if (!location) {
+                alert('Please enter a location to search');
+                return;
+            }
+            
+            // In a real implementation, this would call the MapStreet API
+            // and update the map and donor list with the results
+            console.log(`Searching for ${bloodType || 'all'} blood donors within ${distance} miles of ${location}`);
+            
+            // Simulate loading
+            const donorList = document.getElementById('donors-list');
+            donorList.innerHTML = '<div class="text-center py-8"><i class="fas fa-spinner fa-spin text-3xl text-red-600 mb-4"></i><p>Finding donors near you...</p></div>';
+            
+            // Simulate API delay
+            setTimeout(() => {
+                // This would be replaced with actual API data
+                const sampleDonor = `
+                <div class="donor-card bg-white border rounded-lg p-4 mb-4">
+                    <div class="flex items-start">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="New Donor" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div class="flex-grow">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Alex R.</h4>
+                                    <p class="text-gray-600 text-sm">New Donor</p>
+                                </div>
+                                <div class="blood-type">
+                                    <span class="text-red-600 font-bold">${bloodType || 'O+'}</span>
+                                </div>
+                            </div>
+                            <div class="mt-2 flex items-center text-sm text-gray-500">
+                                <i class="fas fa-map-marker-alt mr-1"></i>
+                                <span>${Math.floor(Math.random() * 5) + 1} miles away</span>
+                            </div>
+                            <div class="mt-2 flex items-center text-sm text-gray-500">
+                                <i class="fas fa-check-circle mr-1 text-blue-500"></i>
+                                <span class="text-blue-600">Verified</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex justify-between items-center">
+                        <div class="flex space-x-1 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <button class="book-btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300" data-id="5">
+                            <i class="fas fa-calendar-alt mr-1"></i> Book
+                        </button>
+                    </div>
+                </div>
+                `;
+                
+                // Update donor list with new results
+                donorList.innerHTML = sampleDonor + sampleDonor + sampleDonor;
+                
+                // Update donor count
+                document.getElementById('donor-count').textContent = '3';
+                
+                // Add event listeners to new book buttons
+                document.querySelectorAll('.book-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        // Same booking functionality as above
+                        const card = this.closest('.donor-card');
+                        const donorName = card.querySelector('h4').textContent;
+                        const donorImg = card.querySelector('img').src;
+                        const donorBlood = card.querySelector('.blood-type span').textContent;
+                        const donorDistance = card.querySelector('span:has(i.fa-map-marker-alt)').textContent;
+                        
+                        document.getElementById('donor-name').textContent = donorName;
+                        document.getElementById('donor-img').src = donorImg;
+                        document.getElementById('donor-blood').textContent = donorBlood;
+                        document.getElementById('donor-distance').innerHTML = `<i class="fas fa-map-marker-alt mr-1"></i>${donorDistance}`;
+                        
+                        bookingModal.classList.add('active');
+                    });
+                });
+            }, 1500);
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // In a real implementation, you would integrate with MapStreet API like this:
+        /*
+        function initMap() {
+            const map = new MapStreet.Map('map-container', {
+                center: [latitude, longitude],
+                zoom: 12
+            });
+            
+            // Add donor markers
+            donors.forEach(donor => {
+                const marker = new MapStreet.Marker({
+                    position: [donor.lat, donor.lng],
+                    map: map,
+                    title: donor.name,
+                    icon: {
+                        url: 'blood-drop-icon.png',
+                        scaledSize: new MapStreet.Size(30, 30)
+                    }
+                });
+                
+                marker.addListener('click', () => {
+                    // Show donor info window
+                });
+            });
+        }
+        
+        // Call this when the search is performed
+        initMap();
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #e63946;
+            --secondary: #1d3557;
+            --accent: #a8dadc;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .donation-step {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .donation-step::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+        }
+        
+        .donation-step::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .eligibility-checkbox:checked + .eligibility-label {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .blood-type-selector input:checked + .blood-type-label {
+            border-color: var(--primary);
+            background-color: #fee2e2;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(230, 57, 70, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(230, 57, 70, 0);
+            }
+        }

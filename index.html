@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeSaver - Donate Blood, Save Lives</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-heartbeat text-3xl text-red-600 mr-2"></i>
+                        <span class="text-xl font-bold text-gray-900">LifeSaver</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html" class="bg-red-600 text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="finddonar.html" class="text-gray-500 px-3 py-2 text-sm font-medium">Find Donors</a>
+                        <a href="donate.html" class="text-gray-500 px-3 py-2 text-sm font-medium">Donate</a>
+                        <a href="about.html" class="text-gray-500 px-3 py-2 text-sm font-medium">About</a>
+                        <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">
+                            <i class="fas fa-user-plus mr-2"></i>Register
+                        </button>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-900 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Home</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">About</a>
+                <a href="#donate" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Donate</a>
+                <a href="#faq" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">FAQ</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Contact</a>
+                <button class="w-full bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium mt-2">
+                    <i class="fas fa-user-plus mr-2"></i>Register
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 slide-in">Be a Hero - Donate Blood!</h1>
+                    <p class="text-xl mb-8 opacity-90 fade-in">Join our community of heroes who donate blood and give the gift of life to those in need.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 fade-in">
+                        <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition duration-300 pulse">
+                            <i class="fas fa-tint mr-2"></i>Donate Now
+                        </button>
+                        <button class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-3 rounded-lg text-lg font-semibold transition duration-300">
+                            <i class="fas fa-search mr-2"></i>Find Donors
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center fade-in">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Blood donation" 
+                             class="rounded-lg shadow-2xl w-full max-w-md border-4 border-white">
+                        <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-red-600">1,250+</div>
+                                <div class="text-gray-700">Lives Saved Today</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-16 scroll-down">
+                <a href="#about" class="text-white text-2xl">
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-gray-100 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="stats-item bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg">
+                    <div class="text-red-600 text-4xl mb-3">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-900">10,000+</h3>
+                    <p class="text-gray-600">Registered Donors</p>
+                </div>
+                <div class="stats-item bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg">
+                    <div class="text-red-600 text-4xl mb-3">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-900">250+</h3>
+                    <p class="text-gray-600">Partner Hospitals</p>
+                </div>
+                <div class="stats-item bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg">
+                    <div class="text-red-600 text-4xl mb-3">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-900">50,000+</h3>
+                    <p class="text-gray-600">Donations Made</p>
+                </div>
+                <div class="stats-item bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg">
+                    <div class="text-red-600 text-4xl mb-3">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-900">15+</h3>
+                    <p class="text-gray-600">Countries Served</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Donate Blood?</h2>
+                <div class="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Blood donation is a simple, safe way to help save lives. Your single donation can help save up to three lives.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Blood donation process" 
+                         class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">The Impact of Your Donation</h3>
+                    <p class="text-gray-600 mb-6">Every two seconds, someone in the world needs blood. Blood donations are essential for surgeries, cancer treatment, chronic illnesses, and traumatic injuries. Despite medical advances, there is no substitute for human blood.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-red-100 p-2 rounded-full">
+                                <i class="fas fa-heartbeat text-red-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Save Lives</h4>
+                                <p class="text-gray-600">Your donation can help up to three people in need.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-red-100 p-2 rounded-full">
+                                <i class="fas fa-heart text-red-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Health Benefits</h4>
+                                <p class="text-gray-600">Regular donation helps maintain healthy iron levels and reduces cardiovascular risk.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-red-100 p-2 rounded-full">
+                                <i class="fas fa-vial text-red-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Free Health Check</h4>
+                                <p class="text-gray-600">Get a mini health screening including blood pressure, hemoglobin levels, and more.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="mt-8 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg text-lg font-semibold transition duration-300">
+                        Learn More About Donation
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blood Types Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Blood Type Compatibility</h2>
+                <div class="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Not all blood types are compatible. Find out who can receive your blood and who you can receive from.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="blood-drop">
+                        <div class="text-4xl font-bold text-red-600 mb-2">A+</div>
+                    </div>
+                    <p class="text-gray-600 mb-3">Can donate to: A+, AB+</p>
+                    <p class="text-gray-600">Can receive from: A+, A-, O+, O-</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="blood-drop">
+                        <div class="text-4xl font-bold text-red-600 mb-2">B+</div>
+                    </div>
+                    <p class="text-gray-600 mb-3">Can donate to: B+, AB+</p>
+                    <p class="text-gray-600">Can receive from: B+, B-, O+, O-</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="blood-drop">
+                        <div class="text-4xl font-bold text-red-600 mb-2">AB+</div>
+                    </div>
+                    <p class="text-gray-600 mb-3">Can donate to: AB+</p>
+                    <p class="text-gray-600">Can receive from: All Types</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="blood-drop">
+                        <div class="text-4xl font-bold text-red-600 mb-2">O+</div>
+                    </div>
+                    <p class="text-gray-600 mb-3">Can donate to: All Rh+</p>
+                    <p class="text-gray-600">Can receive from: O+, O-</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <button class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg text-lg font-semibold transition duration-300">
+                    View Full Compatibility Chart
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Process Section -->
+    <section id="donate" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Donation Process</h2>
+                <div class="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Donating blood is simple and takes less than an hour from start to finish.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="donation-card bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-red-600 text-4xl mb-4">
+                        <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto">
+                            <span class="text-2xl font-bold">1</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Registration</h3>
+                    <p class="text-gray-600 text-center">Complete a donor registration form with your contact information and medical history.</p>
+                </div>
+                <div class="donation-card bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-red-600 text-4xl mb-4">
+                        <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto">
+                            <span class="text-2xl font-bold">2</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Health Check</h3>
+                    <p class="text-gray-600 text-center">A quick health screening including blood pressure, pulse, and hemoglobin level check.</p>
+                </div>
+                <div class="donation-card bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-red-600 text-4xl mb-4">
+                        <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto">
+                            <span class="text-2xl font-bold">3</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Donation</h3>
+                    <p class="text-gray-600 text-center">Actual blood donation takes about 8-10 minutes. You'll donate about a pint of blood.</p>
+                </div>
+                <div class="donation-card bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-red-600 text-4xl mb-4">
+                        <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto">
+                            <span class="text-2xl font-bold">4</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Refreshment</h3>
+                    <p class="text-gray-600 text-center">Enjoy snacks and drinks while you rest for 10-15 minutes before resuming your day.</p>
+                </div>
+                <div class="donation-card bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-red-600 text-4xl mb-4">
+                        <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto">
+                            <span class="text-2xl font-bold">5</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Testing</h3>
+                    <p class="text-gray-600 text-center">Your blood is tested for infectious diseases and typed before being sent to hospitals.</p>
+                </div>
+                <div class="donation-card bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-red-600 text-4xl mb-4">
+                        <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto">
+                            <span class="text-2xl font-bold">6</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Delivery</h3>
+                    <p class="text-gray-600 text-center">Your blood is delivered to hospitals where it's needed most to save lives.</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-red-600 rounded-lg p-8 text-white">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="md:w-2/3 mb-6 md:mb-0">
+                        <h3 class="text-2xl font-bold mb-4">Ready to Make a Difference?</h3>
+                        <p>Schedule your blood donation appointment today and become a lifesaver in your community.</p>
+                    </div>
+                    <div class="md:w-1/3 text-center md:text-right">
+                        <button class="bg-white hover:bg-gray-100 text-red-600 px-8 py-3 rounded-lg text-lg font-semibold transition duration-300">
+                            <i class="fas fa-calendar-alt mr-2"></i>Book Appointment
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eligibility Checker -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-red-600 text-white p-10 flex items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4">Am I Eligible to Donate?</h3>
+                            <p class="mb-6">Use our quick eligibility checker to see if you can donate blood today.</p>
+                            <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-check-circle mr-2"></i>
+                                    <span>Generally in good health</span>
+                                </div>
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-check-circle mr-2"></i>
+                                    <span>At least 17 years old</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle mr-2"></i>
+                                    <span>Weigh at least 110 lbs</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-10">
+                        <form id="eligibility-form">
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2">Age</label>
+                                <input type="number" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600" placeholder="Enter your age">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2">Weight (lbs)</label>
+                                <input type="number" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600" placeholder="Enter your weight">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2">Last Donation Date</label>
+                                <input type="date" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2">Recent Travel</label>
+                                <select class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                                    <option value="">Select an option</option>
+                                    <option value="no">No international travel</option>
+                                    <option value="yes">Traveled internationally</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg text-lg font-semibold transition duration-300">
+                                Check Eligibility
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Stories of Hope</h2>
+                <div class="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Hear from donors and recipients about how blood donation has impacted their lives.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <img src="Assets/paveesh.jpg" alt="Paveesh." class="w-16 h-16 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Paveesh.</h4>
+                            <p class="text-gray-600">Regular Donor</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"I've been donating blood for 10 years now. It's such a simple way to give back to my community. The staff at LifeSaver always make me feel comfortable and appreciated."</p>
+                    <div class="text-red-600">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <img src="Assets/profile.jpeg" alt="Michael T." class="w-16 h-16 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Gowtham,CEO</h4>
+                            <p class="text-gray-600">Blood Recipient</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"A space shuttle disaster nearly took my life, but blood donors became my heroes. Now, I’m paying it forward as a donor – because real heroes don’t just fly, they give."</p>
+                    <div class="text-red-600">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <img src="Assets/profile2.png" alt="Priya K." class="w-16 h-16 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Priya K.</h4>
+                            <p class="text-gray-600">First-time Donor</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"I was nervous about donating for the first time, but the team at LifeSaver made the process so easy and comfortable. I'll definitely be back to donate again!"</p>
+                    <div class="text-red-600">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <div class="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Find answers to common questions about blood donation.</p>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <button class="faq-question w-full flex justify-between items-center text-left focus:outline-none">
+                        <span class="text-lg font-medium text-gray-900">How often can I donate blood?</span>
+                        <i class="fas fa-chevron-down text-red-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-4 hidden">
+                        <p class="text-gray-600">You can donate whole blood every 56 days (8 weeks). Platelet donors can donate more frequently - up to 24 times per year. This allows your body time to replenish the blood you donated.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <button class="faq-question w-full flex justify-between items-center text-left focus:outline-none">
+                        <span class="text-lg font-medium text-gray-900">Does donating blood hurt?</span>
+                        <i class="fas fa-chevron-down text-red-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-4 hidden">
+                        <p class="text-gray-600">You may feel a slight pinch when the needle is inserted, but most donors report feeling no discomfort during the donation process. The actual blood donation typically takes about 8-10 minutes.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <button class="faq-question w-full flex justify-between items-center text-left focus:outline-none">
+                        <span class="text-lg font-medium text-gray-900">How long does the whole process take?</span>
+                        <i class="fas fa-chevron-down text-red-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-4 hidden">
+                        <p class="text-gray-600">The entire process - from registration to refreshments - takes about an hour. The actual blood donation only takes 8-10 minutes. First-time donors should plan for about 1.5 hours.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <button class="faq-question w-full flex justify-between items-center text-left focus:outline-none">
+                        <span class="text-lg font-medium text-gray-900">What should I do before donating?</span>
+                        <i class="fas fa-chevron-down text-red-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-4 hidden">
+                        <p class="text-gray-600">Get a good night's sleep, eat a healthy meal before donating, drink plenty of fluids (avoid caffeine), and bring your ID. Avoid fatty foods as they can affect blood tests.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <button class="faq-question w-full flex justify-between items-center text-left focus:outline-none">
+                        <span class="text-lg font-medium text-gray-900">How is my blood used?</span>
+                        <i class="fas fa-chevron-down text-red-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-4 hidden">
+                        <p class="text-gray-600">Your blood is separated into components (red cells, plasma, platelets) and tested for safety. It's then distributed to hospitals for trauma patients, surgeries, cancer treatments, chronic illnesses, and more.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg text-lg font-semibold transition duration-300">
+                    View All FAQs
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Find Donation Centers -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-red-600 rounded-xl shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-10 text-white">
+                        <h3 class="text-2xl font-bold mb-4">Find a Donation Center Near You</h3>
+                        <p class="mb-6">We have hundreds of donation centers and mobile blood drives across the country. Enter your location to find the nearest one.</p>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-2xl mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">LifeSaver Main Center</h4>
+                                <p>123 Health Avenue, Medical City</p>
+                                <p>Open today: 8:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 bg-white p-10">
+                        <div class="h-full flex flex-col justify-center">
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2">Enter Your Location</label>
+                                <div class="relative">
+                                    <input type="text" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600" placeholder="City, State or ZIP Code">
+                                    <button class="absolute right-3 top-3 text-gray-400 hover:text-gray-600">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2">Search Radius</label>
+                                <select class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                                    <option>5 miles</option>
+                                    <option>10 miles</option>
+                                    <option>25 miles</option>
+                                    <option>50 miles</option>
+                                </select>
+                            </div>
+                            <button class="w-full bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg text-lg font-semibold transition duration-300">
+                                Find Centers
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Stay Connected</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Subscribe to our newsletter for blood donation tips, events, and urgent needs in your area.</p>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <form class="flex flex-col md:flex-row gap-4">
+                    <div class="flex-grow">
+                        <input type="email" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600" placeholder="Enter your email address">
+                    </div>
+                    <button class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg text-lg font-semibold transition duration-300 whitespace-nowrap">
+                        Subscribe Now
+                    </button>
+                </form>
+                <p class="text-sm text-gray-500 mt-3 text-center">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Contact Us</h2>
+                <div class="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Have questions or need assistance? Our team is here to help you.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-red-100 p-3 rounded-full">
+                                <i class="fas fa-map-marker-alt text-red-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Address</h4>
+                                <p class="text-gray-600">123 Health Avenue<br>Sivakasi City, MC 12345</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-red-100 p-3 rounded-full">
+                                <i class="fas fa-phone-alt text-red-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Phone</h4>
+                                <p class="text-gray-600">(+91) 63698-38288<br>Available 24/7 for emergencies</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-red-100 p-3 rounded-full">
+                                <i class="fas fa-envelope text-red-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Email</h4>
+                                <p class="text-gray-600">info@lifesaver.org<br>support@lifesaver.org</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="text-lg font-semibold text-gray-900 mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-gray-100 hover:bg-red-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center text-gray-600 transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 hover:bg-red-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center text-gray-600 transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 hover:bg-red-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center text-gray-600 transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 hover:bg-red-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center text-gray-600 transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 hover:bg-red-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center text-gray-600 transition duration-300">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 mb-2">First Name</label>
+                                <input type="text" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Last Name</label>
+                                <input type="text" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <label class="block text-gray-700 mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                        </div>
+                        <div class="mt-6">
+                            <label class="block text-gray-700 mb-2">Subject</label>
+                            <input type="text" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                        </div>
+                        <div class="mt-6">
+                            <label class="block text-gray-700 mb-2">Message</label>
+                            <textarea rows="5" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"></textarea>
+                        </div>
+                        <button class="mt-6 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg text-lg font-semibold transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-heartbeat text-3xl text-red-600 mr-2"></i>
+                        <span class="text-xl font-bold">LifeSaver</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Connecting donors with those in need to save lives through blood donation.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#donate" class="text-gray-400 hover:text-white">Donate Blood</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-white">FAQs</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blood Donation Guide</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Eligibility Criteria</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blood Type Chart</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Donor Stories</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Volunteer Opportunities</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Emergency Contacts</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">24/7 Helpline: <span class="text-white">(+91) 6369838278</span></li>
+                        <li class="text-gray-400">Email: <span class="text-white">emergency@lifesaver.org</span></li>
+                        <li class="text-gray-400">Urgent Blood Requests: <span class="text-white">(+91) 6369838278</span></li>
+                    </ul>
+                    <div class="mt-6">
+                        <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium">
+                            <i class="fas fa-phone-alt mr-2"></i>Emergency Call
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2025 LifeSaver Blood Donation Platform. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Cookies Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-red-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src=script.js></script>
+</body>
+</html>

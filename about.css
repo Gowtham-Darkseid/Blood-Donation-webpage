@@ -1,0 +1,49 @@
+  .mission-card:hover .mission-icon {
+            transform: scale(1.1);
+            color: #dc2626;
+        }
+        .team-member:hover img {
+            transform: scale(1.05);
+        }
+        .timeline-item:not(:last-child):after {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 32px;
+            height: calc(100% - 32px);
+            width: 2px;
+            background: #e5e7eb;
+        }
+        .blood-drop {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(220, 38, 38, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+        }
+        .eligibility-label span:first-child {
+            transition: all 0.2s ease;
+        }
+        .eligibility-checkbox:checked + .eligibility-label span:first-child {
+            background-color: #dc2626;
+            border-color: #dc2626;
+        }
+        .blood-type-label {
+            transition: all 0.2s ease;
+        }
+        .blood-type-selector input:checked + .blood-type-label {
+            background-color: #dc2626;
+            color: white;
+            border-color: #dc2626;
+        }
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
