@@ -7,6 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="auth.css">
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 </head>
 <body class="min-h-screen bg-gray-50">
     <header class="max-w-4xl mx-auto px-4 pt-8 pb-4 flex items-center">
@@ -46,7 +48,7 @@
                     
                     <div class="divider">or</div>
                     
-                    <form id="loginForm">
+                    <form id="loginForm" action="server/vaild.php" method="POST">
                         <div class="mb-6 input-group">
                             <i class="fas fa-envelope"></i>
                             <input type="email" id="login-email" placeholder="Email Address" 
@@ -92,7 +94,7 @@
                     
                     <div class="divider">or</div>
                     
-                    <form id="registerForm">
+                    <form id="registerForm" action="server/vaild.php" method="POST">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                             <div class="input-group">
                                 <i class="fas fa-user"></i>
@@ -185,6 +187,6 @@
             </div>
         </div>
     </div>
-    <script src="server/auth.js"></script>
+    <script type="module" src="server/auth.js"></script>
 </body>
 </html>
