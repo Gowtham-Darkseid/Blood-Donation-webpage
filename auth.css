@@ -1,0 +1,177 @@
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .blood-drop {
+            position: relative;
+        }
+        
+        .blood-drop::after {
+            content: "";
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 20px;
+            height: 20px;
+            background-color: #e63946;
+            border-radius: 50% 0 50% 50%;
+            transform: rotate(45deg);
+        }
+        
+        .form-container {
+            box-shadow: 0 10px 30px rgba(230, 57, 70, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .form-container:hover {
+            box-shadow: 0 15px 35px rgba(230, 57, 70, 0.2);
+        }
+        
+        .btn-donate {
+            background: linear-gradient(135deg, #e63946, #d62839);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-donate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+        }
+        
+        .input-group {
+            position: relative;
+        }
+        
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #e63946;
+        }
+        
+        .input-group input {
+            padding-left: 40px;
+        }
+        
+        .toggle-form {
+            color: #e63946;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        
+        .toggle-form:hover {
+            text-decoration: none;
+        }
+        
+        .blood-types {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        
+        .blood-type {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .blood-type:hover {
+            border-color: #e63946;
+        }
+        
+        .blood-type.selected {
+            background-color: #e63946;
+            color: white;
+            border-color: #e63946;
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .tab.active {
+            border-bottom: 3px solid #e63946;
+            color: #e63946;
+            font-weight: 500;
+        }
+        
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0;
+            color: #6b7280;
+        }
+        
+        .divider::before, .divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .divider::before {
+            margin-right: 15px;
+        }
+        
+        .divider::after {
+            margin-left: 15px;
+        }
+        
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
+        }
+        
+        .social-btn i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        
+        .btn-google {
+            background-color: white;
+            color: #3c4043;
+            border: 1px solid #dadce0;
+        }
+        
+        .btn-google:hover {
+            background-color: #f8f9fa;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .btn-facebook {
+            background-color: #1877f2;
+            color: white;
+            border: 1px solid #1877f2;
+        }
+        
+        .btn-facebook:hover {
+            background-color: #166fe5;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .btn-apple {
+            background-color: black;
+            color: white;
+            border: 1px solid black;
+        }
+        
+        .btn-apple:hover {
+            background-color: #1a1a1a;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }

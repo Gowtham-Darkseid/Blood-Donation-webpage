@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeSaver - Blood Donation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body class="min-h-screen bg-gray-50">
+    <header class="max-w-4xl mx-auto px-4 pt-8 pb-4 flex items-center">
+        <a href="index.html" class="text-red-600 hover:text-red-800 text-2xl mr-4" title="Back to Home">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <span class="text-lg font-semibold text-gray-800">Back to Home</span>
+    </header>
+    <div class="container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-800 mb-2">
+                    <span class="blood-drop relative pr-6">LifeSaver</span>
+                </h1>
+                <p class="text-lg text-gray-600">Join our community of blood donors and help save lives</p>
+            </div>
+            <div class="flex justify-center mb-8">
+                <div class="flex bg-white rounded-lg shadow overflow-hidden">
+                    <div class="tab active" id="signin-tab">Sign In</div>
+                    <div class="tab" id="signup-tab">Sign Up</div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg form-container">
+                <div id="signin-form" class="p-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Welcome back donor!</h2>
+                    <div class="mb-6">
+                        <button class="social-btn btn-google" onclick="signInWithGoogle()">
+                            <i class="fab fa-google"></i> Continue with Google
+                        </button>
+                        <button class="social-btn btn-facebook" onclick="signInWithFacebook()">
+                            <i class="fab fa-facebook-f"></i> Continue with Facebook
+                        </button>
+                        <button class="social-btn btn-apple" onclick="signInWithApple()">
+                            <i class="fab fa-apple"></i> Continue with Apple
+                        </button>
+                    </div>
+                    
+                    <div class="divider">or</div>
+                    
+                    <form id="loginForm">
+                        <div class="mb-6 input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="login-email" placeholder="Email Address" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-200 focus:border-transparent" required>
+                        </div>
+                        
+                        <div class="mb-6 input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="login-password" placeholder="Password" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-200 focus:border-transparent" required>
+                        </div>
+                        
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="remember-me" class="h-4 w-4 text-red-600 focus:ring-red-500 border-gray-300 rounded">
+                                <label for="remember-me" class="ml-2 block text-sm text-gray-700">Remember me</label>
+                            </div>
+                            <a href="#" class="text-sm text-red-600 hover:underline">Forgot password?</a>
+                        </div>
+                        
+                        <button type="submit" class="w-full py-3 px-4 bg-red-600 text-white font-semibold rounded-lg btn-donate">
+                            Sign In
+                        </button>
+                    </form>
+                    
+                    <div class="mt-6 text-center">
+                        <p class="text-gray-600">New to LifeSaver? <span class="toggle-form text-red-600 font-medium" data-target="signup">Create an account</span></p>
+                    </div>
+                </div>
+                <div id="signup-form" class="p-8 hidden">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Become a life saver</h2>
+                    <div class="mb-6">
+                        <button class="social-btn btn-google" onclick="signUpWithGoogle()">
+                            <i class="fab fa-google"></i> Continue with Google
+                        </button>
+                        <button class="social-btn btn-facebook" onclick="signUpWithFacebook()">
+                            <i class="fab fa-facebook-f"></i> Continue with Facebook
+                        </button>
+                        <button class="social-btn btn-apple" onclick="signUpWithApple()">
+                            <i class="fab fa-apple"></i> Continue with Apple
+                        </button>
+                    </div>
+                    
+                    <div class="divider">or</div>
+                    
+                    <form id="registerForm">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div class="input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="first-name" placeholder="First Name" 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-200 focus:border-transparent" required>
+                            </div>
+                            
+                            <div class="input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="last-name" placeholder="Last Name" 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-200 focus:border-transparent" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6 input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="register-email" placeholder="Email Address" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-200 focus:border-transparent" required>
+                        </div>
+                        
+                        <div class="mb-6 input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="register-password" placeholder="Password" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-200 focus:border-transparent" required>
+                        </div>
+                        
+                        <div class="mb-6 input-group">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="phone" placeholder="Phone Number" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-200 focus:border-transparent" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm font-medium mb-2">Blood Type</label>
+                            <div class="blood-types">
+                                <div class="blood-type" data-type="A+">A+</div>
+                                <div class="blood-type" data-type="A-">A-</div>
+                                <div class="blood-type" data-type="B+">B+</div>
+                                <div class="blood-type" data-type="B-">B-</div>
+                                <div class="blood-type" data-type="AB+">AB+</div>
+                                <div class="blood-type" data-type="AB-">AB-</div>
+                                <div class="blood-type" data-type="O+">O+</div>
+                                <div class="blood-type" data-type="O-">O-</div>
+                            </div>
+                            <input type="hidden" id="blood-type" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm font-medium mb-2">Location</label>
+                            <select id="location" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-200 focus:border-transparent" required>
+                                <option value="" disabled selected>Select your city</option>
+                                <option value="new-york">New York</option>
+                                <option value="los-angeles">Los Angeles</option>
+                                <option value="chicago">Chicago</option>
+                                <option value="houston">Houston</option>
+                                <option value="phoenix">Phoenix</option>
+                            </select>
+                        </div>
+                        
+                        <div class="flex items-center mb-6">
+                            <input type="checkbox" id="terms" class="h-4 w-4 text-red-600 focus:ring-red-500 border-gray-300 rounded" required>
+                            <label for="terms" class="ml-2 block text-sm text-gray-700">
+                                I agree to the <a href="#" class="text-red-600 hover:underline">Terms of Service</a> and <a href="#" class="text-red-600 hover:underline">Privacy Policy</a>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="w-full py-3 px-4 bg-red-600 text-white font-semibold rounded-lg btn-donate">
+                            Sign Up
+                        </button>
+                    </form>
+                    
+                    <div class="mt-6 text-center">
+                        <p class="text-gray-600">Already have an account? <span class="toggle-form text-red-600 font-medium" data-target="signin">Sign in</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div class="bg-white p-6 rounded-xl shadow">
+                    <div class="text-4xl font-bold text-red-600 mb-2">10,000+</div>
+                    <div class="text-gray-600">Lives Saved</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow">
+                    <div class="text-4xl font-bold text-red-600 mb-2">5,000+</div>
+                    <div class="text-gray-600">Active Donors</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow">
+                    <div class="text-4xl font-bold text-red-600 mb-2">50+</div>
+                    <div class="text-gray-600">Partner Hospitals</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="server/auth.js"></script>
+</body>
+</html>
