@@ -112,3 +112,34 @@
                 behavior: 'smooth'
             });
         });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Prevent double initialization if script is loaded twice
+        if (document.getElementById('map') && !window._leafletMapInitialized) {
+            window._leafletMapInitialized = true;
+            // Initialize the map
+            var map = L.map('map').setView([20.5937, 78.9629], 5); // Centered on India
+
+            // Add OpenStreetMap tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            // Enable location button
+            document.getElementById('enable-location').addEventListener('click', function () {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function (position) {
+                        var lat = position.coords.latitude;
+                        var lng = position.coords.longitude;
+                        map.setView([lat, lng], 13);
+                        L.marker([lat, lng]).addTo(map)
+                            .bindPopup('You are here').openPopup();
+                    }, function () {
+                        alert('Unable to retrieve your location.');
+                    });
+                } else {
+                    alert('Geolocation is not supported by your browser.');
+                }
+            });
+        }
+    });

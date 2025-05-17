@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
     <nav class="bg-white shadow-lg fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center h-16">
@@ -19,17 +18,20 @@
                         <span class="text-xl font-bold text-gray-900">LifeSaver</span>
                     </div>
                 </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-center space-x-8">
-                        <a href="index.html" class="bg-red-600 text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                        <a href="finddonar.html" class="text-gray-500 px-3 py-2 text-sm font-medium">Find Donors</a>
-                        <a href="donate.html" class="text-gray-500 px-3 py-2 text-sm font-medium">Donate</a>
-                        <a href="about.html" class="text-gray-500 px-3 py-2 text-sm font-medium">About</a>
-                        <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">
-                            <i class="fas fa-user-plus mr-2"></i>Register
-                        </button>
-                    </div>
-                </div>
+<div class="hidden md:block">
+    <div class="ml-10 flex items-center space-x-8">
+        <a href="index.html" class="text-red-600 underline underline-offset-8 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+        <a href="finddonar.html" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium">Find Donors</a>
+        <a href="donate.html" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium">Donate</a>
+        <a href="about.html" class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium">About</a>
+        <button class="text-white bg-red-600 hover:bg-red-700 px-4 py-2 rounded-md text-sm font-medium transition duration-300" onclick="window.location.href='donate.html#donation-form';">
+            <i class="fas fa-user-plus mr-2"></i>Register
+        </button>
+        <button class="text-red-600 border border-red-600 hover:bg-red-600 hover:text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300" onclick="window.location.href='signup.html';">
+            <i class="fas fa-user mr-2"></i>Sign In
+        </button>
+    </div>
+</div>
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-gray-900 focus:outline-none">
                         <i class="fas fa-bars text-xl"></i>
@@ -38,21 +40,18 @@
             </div>
         </div>
         
-        <!-- Mobile menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Home</a>
                 <a href="finddonar.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Find-donar</a>
                 <a href="donate.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Donate</a>
                 <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">About</a>
-                <button class="w-full bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium mt-2">
+                <button class="w-full bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium mt-2" onclick="window.location.href='donate.html#donation-form';">
                     <i class="fas fa-user-plus mr-2"></i>Register
                 </button>
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
     <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white pt-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div class="flex flex-col md:flex-row items-center">
@@ -60,10 +59,10 @@
                     <h1 class="text-4xl md:text-6xl font-bold mb-6 slide-in">Be a Hero - Donate Blood!</h1>
                     <p class="text-xl mb-8 opacity-90 fade-in">Join our community of heroes who donate blood and give the gift of life to those in need.</p>
                     <div class="flex flex-col sm:flex-row gap-4 fade-in">
-                        <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition duration-300 pulse">
+                        <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition duration-300 pulse" onclick="window.location.href='donate.html#donation-form';">
                             <i class="fas fa-tint mr-2"></i>Donate Now
                         </button>
-                        <button class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-3 rounded-lg text-lg font-semibold transition duration-300">
+                        <button class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-3 rounded-lg text-lg font-semibold transition duration-300" onclick="window.location.href='finddonar.html';">
                             <i class="fas fa-search mr-2"></i>Find Donors
                         </button>
                     </div>
@@ -89,8 +88,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Stats Section -->
     <section class="bg-gray-100 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -125,8 +122,6 @@
             </div>
         </div>
     </section>
-
-    <!-- About Section -->
     <section id="about" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -175,15 +170,13 @@
                         </div>
                     </div>
                     
-                    <button class="mt-8 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg text-lg font-semibold transition duration-300">
+                    <button class="mt-8 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg text-lg font-semibold transition duration-300" onclick="window.location.href='about.html';">
                         Learn More About Donation
                     </button>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Blood Types Section -->
     <section class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -230,8 +223,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Donation Process Section -->
     <section id="donate" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -312,8 +303,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Eligibility Checker -->
     <section class="py-16 bg-gray-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white rounded-xl shadow-xl overflow-hidden">
@@ -369,8 +358,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Testimonials -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -434,8 +421,6 @@
             </div>
         </div>
     </section>
-
-    <!-- FAQ Section -->
     <section id="faq" class="py-20 bg-gray-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -499,76 +484,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Find Donation Centers -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-red-600 rounded-xl shadow-xl overflow-hidden">
-                <div class="md:flex">
-                    <div class="md:w-1/2 p-10 text-white">
-                        <h3 class="text-2xl font-bold mb-4">Find a Donation Center Near You</h3>
-                        <p class="mb-6">We have hundreds of donation centers and mobile blood drives across the country. Enter your location to find the nearest one.</p>
-                        <div class="flex items-center">
-                            <i class="fas fa-map-marker-alt text-2xl mr-4"></i>
-                            <div>
-                                <h4 class="font-bold">LifeSaver Main Center</h4>
-                                <p>123 Health Avenue, Medical City</p>
-                                <p>Open today: 8:00 AM - 6:00 PM</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="md:w-1/2 bg-white p-10">
-                        <div class="h-full flex flex-col justify-center">
-                            <div class="mb-6">
-                                <label class="block text-gray-700 mb-2">Enter Your Location</label>
-                                <div class="relative">
-                                    <input type="text" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600" placeholder="City, State or ZIP Code">
-                                    <button class="absolute right-3 top-3 text-gray-400 hover:text-gray-600">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="mb-6">
-                                <label class="block text-gray-700 mb-2">Search Radius</label>
-                                <select class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
-                                    <option>5 miles</option>
-                                    <option>10 miles</option>
-                                    <option>25 miles</option>
-                                    <option>50 miles</option>
-                                </select>
-                            </div>
-                            <button class="w-full bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg text-lg font-semibold transition duration-300">
-                                Find Centers
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Stay Connected</h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Subscribe to our newsletter for blood donation tips, events, and urgent needs in your area.</p>
-            </div>
-            
-            <div class="bg-white rounded-lg shadow-md p-8">
-                <form class="flex flex-col md:flex-row gap-4">
-                    <div class="flex-grow">
-                        <input type="email" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600" placeholder="Enter your email address">
-                    </div>
-                    <button class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg text-lg font-semibold transition duration-300 whitespace-nowrap">
-                        Subscribe Now
-                    </button>
-                </form>
-                <p class="text-sm text-gray-500 mt-3 text-center">We respect your privacy. Unsubscribe at any time.</p>
-            </div>
-        </div>
-    </section>
-
     <section id="contact" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">

@@ -24,7 +24,7 @@
                         <a href="finddonar.html" class="text-gray-500 px-3 py-2 text-sm font-medium">Find Donors</a>
                         <a href="donate.html" class="bg-red-600 text-white px-3 py-2 rounded-md text-sm font-medium">Donate</a>
                         <a href="about.html" class="text-gray-500 px-3 py-2 text-sm font-medium">About</a>
-                        <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">
+                        <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300" onclick="window.location.href='donate.html#donation-form';">
                             <i class="fas fa-user-plus mr-2"></i>Register
                         </button>
                     </div>
@@ -43,7 +43,7 @@
                 <a href="finddonar.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Find Donors</a>
                 <a href="donate.html" class="block px-3 py-2 text-base font-medium text-white bg-red-600 rounded-md">Donate</a>
                 <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">About</a>
-                <button class="w-full bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium mt-2">
+                <button class="w-full bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium mt-2" onclick="window.location.href='donate.html#donation-form';">
                     <i class="fas fa-user-plus mr-2"></i>Register
                 </button>
             </div>
@@ -89,8 +89,6 @@
             </div>
         </div>
     </section>
-
-    <!-- How It Works -->
     <section id="how-it-works" class="py-12 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -99,10 +97,7 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-                <!-- Timeline connector -->
                 <div class="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-red-200 transform -translate-y-1/2 z-0"></div>
-                
-                <!-- Step 1 -->
                 <div class="donation-step bg-white p-6 rounded-xl shadow-md text-center relative z-10">
                     <div class="text-red-600 text-4xl mb-4">
                         <i class="fas fa-user-check"></i>
@@ -110,8 +105,6 @@
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Registration</h3>
                     <p class="text-gray-600">Complete a donor registration form with your basic information.</p>
                 </div>
-                
-                <!-- Step 2 -->
                 <div class="donation-step bg-white p-6 rounded-xl shadow-md text-center relative z-10">
                     <div class="text-red-600 text-4xl mb-4">
                         <i class="fas fa-stethoscope"></i>
@@ -119,8 +112,6 @@
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Health Check</h3>
                     <p class="text-gray-600">Quick health screening including blood pressure and hemoglobin test.</p>
                 </div>
-                
-                <!-- Step 3 -->
                 <div class="donation-step bg-white p-6 rounded-xl shadow-md text-center relative z-10">
                     <div class="text-red-600 text-4xl mb-4">
                         <i class="fas fa-tint"></i>
@@ -128,8 +119,6 @@
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Donation</h3>
                     <p class="text-gray-600">Actual donation takes about 8-10 minutes for whole blood.</p>
                 </div>
-                
-                <!-- Step 4 -->
                 <div class="donation-step bg-white p-6 rounded-xl shadow-md text-center relative z-10">
                     <div class="text-red-600 text-4xl mb-4">
                         <i class="fas fa-cookie-bite"></i>
@@ -187,8 +176,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Eligibility Checker -->
     <section class="py-12 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-red-600 rounded-xl shadow-xl overflow-hidden">
@@ -251,8 +238,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Donation Form -->
     <section id="donation-form" class="py-12 bg-gray-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white rounded-xl shadow-xl overflow-hidden">
@@ -424,8 +409,6 @@
             </div>
         </div>
     </section>
-
-    <!-- FAQ Section -->
     <section class="py-12 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -503,8 +486,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Call to Action -->
     <section class="py-16 bg-gradient-to-r from-red-600 to-red-800 text-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl font-bold mb-6">Ready to Make a Difference?</h2>
@@ -519,8 +500,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -568,9 +547,9 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Emergency Contacts</h3>
                     <ul class="space-y-2">
-                        <li class="text-gray-400">24/7 Helpline: <span class="text-white">(123) 456-7890</span></li>
+                        <li class="text-gray-400">24/7 Helpline: <span class="text-white">(+91) 6369838278</span></li>
                         <li class="text-gray-400">Email: <span class="text-white">emergency@lifesaver.org</span></li>
-                        <li class="text-gray-400">Urgent Blood Requests: <span class="text-white">(123) 456-7891</span></li>
+                        <li class="text-gray-400">Urgent Blood Requests: <span class="text-white">(+91) 6369838278</span></li>
                     </ul>
                     <div class="mt-6">
                         <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium">
@@ -589,8 +568,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Back to Top Button -->
     <button id="back-to-top" class="fixed bottom-8 right-8 bg-red-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
         <i class="fas fa-arrow-up"></i>
     </button>
