@@ -3,7 +3,7 @@
             menu.classList.toggle('hidden');
         });
 
-        // Back to top button
+        
         window.addEventListener('scroll', function() {
             const backToTopButton = document.getElementById('back-to-top');
             if (window.pageYOffset > 300) {
@@ -19,7 +19,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // FAQ accordion
+        
         const faqQuestions = document.querySelectorAll('.faq-question');
         faqQuestions.forEach(question => {
             question.addEventListener('click', function() {
@@ -29,9 +29,9 @@
             });
         });
 
-        // Eligibility form submission
+        
         document.getElementById('eligibility-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            // Here you would normally process the form data
+            
             alert('Thank you for checking your eligibility! Our team will review your information and contact you soon.');
         });

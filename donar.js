@@ -3,17 +3,14 @@ document.getElementById('mobile-menu-button').addEventListener('click', function
             menu.classList.toggle('hidden');
         });
 
-        // Filter buttons
         const filterButtons = document.querySelectorAll('.filter-btn');
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
                 button.classList.toggle('active');
-                // Here you would filter the donor list based on the selected filters
-                // For demo purposes, we're just toggling the active class
+ 
             });
         });
 
-        // Booking modal functionality
         const bookButtons = document.querySelectorAll('.book-btn');
         const bookingModal = document.getElementById('booking-modal');
         const closeModal = document.getElementById('close-modal');
@@ -21,20 +18,20 @@ document.getElementById('mobile-menu-button').addEventListener('click', function
         
         bookButtons.forEach(button => {
             button.addEventListener('click', () => {
-                // Get donor data from the clicked card
+                
                 const card = button.closest('.donor-card');
                 const donorName = card.querySelector('h4').textContent;
                 const donorImg = card.querySelector('img').src;
                 const donorBlood = card.querySelector('.blood-type span').textContent;
                 const donorDistance = card.querySelector('span:has(i.fa-map-marker-alt)').textContent;
                 
-                // Populate modal with donor data
+        
                 document.getElementById('donor-name').textContent = donorName;
                 document.getElementById('donor-img').src = donorImg;
                 document.getElementById('donor-blood').textContent = donorBlood;
                 document.getElementById('donor-distance').innerHTML = `<i class="fas fa-map-marker-alt mr-1"></i>${donorDistance}`;
                 
-                // Show modal
+
                 bookingModal.classList.add('active');
             });
         });
@@ -50,7 +47,6 @@ document.getElementById('mobile-menu-button').addEventListener('click', function
             bookingForm.reset();
         });
 
-        // Search functionality
         document.getElementById('search-btn').addEventListener('click', () => {
             const location = document.getElementById('location-input').value;
             const bloodType = document.getElementById('blood-type-select').value;
@@ -61,17 +57,14 @@ document.getElementById('mobile-menu-button').addEventListener('click', function
                 return;
             }
             
-            // In a real implementation, this would call the MapStreet API
-            // and update the map and donor list with the results
+        
             console.log(`Searching for ${bloodType || 'all'} blood donors within ${distance} miles of ${location}`);
             
-            // Simulate loading
             const donorList = document.getElementById('donors-list');
             donorList.innerHTML = '<div class="text-center py-8"><i class="fas fa-spinner fa-spin text-3xl text-red-600 mb-4"></i><p>Finding donors near you...</p></div>';
             
-            // Simulate API delay
             setTimeout(() => {
-                // This would be replaced with actual API data
+                
                 const sampleDonor = `
                 <div class="donor-card bg-white border rounded-lg p-4 mb-4">
                     <div class="flex items-start">
@@ -110,16 +103,14 @@ document.getElementById('mobile-menu-button').addEventListener('click', function
                 </div>
                 `;
                 
-                // Update donor list with new results
+          
                 donorList.innerHTML = sampleDonor + sampleDonor + sampleDonor;
                 
-                // Update donor count
+   
                 document.getElementById('donor-count').textContent = '3';
                 
-                // Add event listeners to new book buttons
                 document.querySelectorAll('.book-btn').forEach(btn => {
                     btn.addEventListener('click', function() {
-                        // Same booking functionality as above
                         const card = this.closest('.donor-card');
                         const donorName = card.querySelector('h4').textContent;
                         const donorImg = card.querySelector('img').src;
@@ -137,7 +128,7 @@ document.getElementById('mobile-menu-button').addEventListener('click', function
             }, 1500);
         });
 
-        // Back to top button
+      
         const backToTopButton = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
@@ -186,18 +177,16 @@ document.getElementById('mobile-menu-button').addEventListener('click', function
         initMap();
         */
 document.addEventListener('DOMContentLoaded', function () {
-    // Only initialize once
+
     if (document.getElementById('map') && !window._leafletMapInitialized) {
         window._leafletMapInitialized = true;
-        // Initialize the map
-        var map = L.map('map').setView([20.5937, 78.9629], 5); // Centered on India
+       
+        var map = L.map('map').setView([20.5937, 78.9629], 5); 
 
-        // Add OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        // Enable location button
         document.getElementById('enable-location').addEventListener('click', function () {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function (position) {
