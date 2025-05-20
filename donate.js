@@ -3,7 +3,6 @@
             menu.classList.toggle('hidden');
         });
 
-        // Eligibility form submission
         document.getElementById('eligibility-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -28,12 +27,10 @@
             alert(message);
             
             if (eligible) {
-                // Scroll to donation form
                 document.getElementById('donation-form').scrollIntoView({ behavior: 'smooth' });
             }
         });
 
-        // Blood type selector
         document.querySelectorAll('.blood-type-selector input').forEach(input => {
             input.addEventListener('change', function() {
                 document.querySelectorAll('.blood-type-label').forEach(label => {
@@ -47,7 +44,6 @@
             });
         });
 
-        // Eligibility checkboxes
         document.querySelectorAll('.eligibility-checkbox').forEach(checkbox => {
             checkbox.addEventListener('change', function() {
                 const label = this.nextElementSibling;
@@ -60,7 +56,6 @@
             });
         });
 
-        // FAQ accordion
         document.querySelectorAll('.faq-question').forEach(button => {
             button.addEventListener('click', () => {
                 const answer = button.nextElementSibling;
@@ -72,29 +67,6 @@
             });
         });
 
-        // Donation form submission
-        document.getElementById('donation-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Check if all eligibility checkboxes are checked
-            const allChecked = Array.from(document.querySelectorAll('.eligibility-checkbox')).every(checkbox => checkbox.checked);
-            
-            if (!allChecked) {
-                alert('Please confirm all eligibility requirements before submitting.');
-                return;
-            }
-            
-            // In a real implementation, this would submit the form data to your backend
-            alert('Thank you for scheduling your blood donation! A confirmation has been sent to your email.');
-            this.reset();
-            
-            // Reset blood type selection
-            document.querySelectorAll('.blood-type-label').forEach(label => {
-                label.classList.remove('border-red-600', 'bg-red-50');
-            });
-        });
-
-        // Back to top button
         const backToTopButton = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
@@ -114,18 +86,14 @@
         });
 
     document.addEventListener('DOMContentLoaded', function () {
-        // Prevent double initialization if script is loaded twice
         if (document.getElementById('map') && !window._leafletMapInitialized) {
             window._leafletMapInitialized = true;
-            // Initialize the map
-            var map = L.map('map').setView([20.5937, 78.9629], 5); // Centered on India
+            var map = L.map('map').setView([20.5937, 78.9629], 5); 
 
-            // Add OpenStreetMap tiles
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
 
-            // Enable location button
             document.getElementById('enable-location').addEventListener('click', function () {
                 if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(function (position) {
@@ -143,3 +111,65 @@
             });
         }
     });
+
+    const firebaseConfig = {
+    apiKey: "AIzaSyBdJv8Gh6Bsz2oFyy6iFjROrim_UBhDnLY",
+    authDomain: "blood-debec.firebaseapp.com",
+    projectId: "blood-debec",
+    storageBucket: "blood-debec.firebasestorage.app",
+    messagingSenderId: "522052912092",
+    appId: "1:522052912092:web:2afb25dc24e64ae47c0519",
+    measurementId: "G-LLZB721K4H"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+document.addEventListener('DOMContentLoaded', function () {
+const form = document.getElementById('donation-form-form');
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+const firstName = form.querySelector('input[name="first-name"]').value.trim();
+const lastName = form.querySelector('input[name="last-name"]').value.trim();
+const email = form.querySelector('input[name="email"]').value.trim();
+const phone = form.querySelector('input[name="phone"]').value.trim();
+const bloodType = form.querySelector('input[name="blood-type"]:checked')?.value || '';
+const donationCenter = form.querySelector('select[name="donation-center"]').value;
+const preferredDate = form.querySelector('input[name="preferred-date"]').value;
+const preferredTime = form.querySelector('select[name="preferred-time"]').value;
+
+    const eligibility = [
+      form.querySelector('#eligibility-1').checked,
+      form.querySelector('#eligibility-2').checked,
+      form.querySelector('#eligibility-3').checked,
+      form.querySelector('#eligibility-4').checked,
+    ];
+
+    const previousDonor = form.querySelector('input[name="previous-donor"]:checked')?.value || '';
+ if (!firstName || !lastName || !email || !phone || !bloodType || !donationCenter || !preferredDate || !preferredTime) {
+      alert('Please fill all required fields.');
+      return;
+    }
+
+    try {
+await db.collection('donations').add({
+  firstName,
+  lastName,
+  email,
+  phone,
+  bloodType,
+  donationCenter,
+  preferredDate,
+  preferredTime,
+  previousDonor, 
+  eligibility,
+  createdAt: firebase.firestore.FieldValue.serverTimestamp()
+});
+      alert('Thank you for scheduling your donation!');
+      form.reset();
+    } catch (error) {
+      alert('Error saving your donation. Please try again.');
+      console.error(error);
+    }
+  });
+});
